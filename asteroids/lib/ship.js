@@ -5,19 +5,21 @@
 
 
   var Ship = Asteroids.Ship = function (game){
-    this.pos = game.randomPosition();
+    this.game = game;
+    this.pos = this.game.randomPosition();
     this.vel = [0,0];
     this.radius = Ship.RADIUS;
     this.color = Ship.COLOR;
-    this.game = game;
-
   };
 
   Util.inherits(Ship, Asteroids.MovingObject);
 
-  Ship.RADIUS = 5
-  Ship.COLOR = "#FF0000"
+  Ship.RADIUS = 5;
+  Ship.COLOR = "#FF0000";
 
+  Ship.prototype.relocate = function() {
+    this.pos = this.game.randomPosition();
+  };
 
 
 

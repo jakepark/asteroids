@@ -14,4 +14,13 @@
   Asteroid.COLOR = "#115c4d";
   Asteroid.RADIUS = 25;
 
+  Asteroid.prototype.collideWith = function(otherObject) {
+    if (otherObject instanceof Asteroids.Ship) {
+      otherObject.relocate();
+    } else {
+      this.game.remove(otherObject);
+      this.game.remove(this);
+    };
+  };
+
 })();
