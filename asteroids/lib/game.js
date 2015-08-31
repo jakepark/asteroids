@@ -9,8 +9,8 @@
     this.addAsteroids();
   };
 
-  Game.DIM_X = 800;
-  Game.DIM_Y = 400;
+  Game.DIM_X = 600;
+  Game.DIM_Y = 600;
   Game.NUM_ASTEROIDS = 10;
 
   Game.prototype.addAsteroids = function () {
@@ -24,8 +24,8 @@
     ctx.clearRect(0, 0, this.dim_x, this.dim_y);
     this.asteroids.forEach(function(ast) {
       ast.draw(ctx);
-    })
-  }
+    });
+  };
 
   Game.prototype.randomPosition = function(){
     var x = Math.random() * this.dim_x;
@@ -33,6 +33,10 @@
     return [x, y];
   };
 
-
+  Game.prototype.moveObjects = function() {
+    this.asteroids.forEach(function(ast) {
+      ast.move();
+    });
+  };
 
 })();
