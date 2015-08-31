@@ -26,21 +26,9 @@
   };
 
   MovingObject.prototype.move = function (){
-    
+    this.pos[0] = this.pos[0] + this.vel[0];
+    this.pos[1] = this.pos[1] + this.vel[1];
   }
-  // a = new MovingObject( {pos: [100, 100], vel: [5,5], radius: 50, color: "#000000"})
-
-  MovingObject.prototype.start = function (canvasEl) {
-      // get a 2d canvas drawing context. The canvas API lets us call
-      // a `getContext` method on a canvas DOM element.
-      var ctx = canvasEl.getContext("2d");
-
-      // render at 60 FPS
-      a.draw(ctx);
-    //   window.setInterval((function () {
-    //     a.draw(ctx);
-    //   }).bind(this), 1000 / 60);
-   };
 
 
 })();

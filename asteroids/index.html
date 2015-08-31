@@ -12,9 +12,17 @@
      var canvasEl = document.getElementsByTagName("canvas")[0];
      canvasEl.height = window.innerHeight;
      canvasEl.width = window.innerWidth;
-     new Asteroids.MovingObject(
-       {pos: [200, 200], vel: [5,5], radius: 80, color: "#00FF00"}
-     ).draw(canvasEl.getContext("2d"));
+     a = new Asteroids.MovingObject(
+       {pos: [200, 200], vel: [100,100], radius: 80, color: "#00FF00"}
+     )//.draw(canvasEl.getContext("2d"));
+
+     a.draw(canvasEl.getContext("2d"));
+     a.move();
+     a.draw(canvasEl.getContext("2d"));
+    //  window.setInterval((function () {
+    //   this.moveCircles();
+    //   this.render(ctx);
+    // }).bind(this), 1000 / 60);
    </script>
   </body>
 </html>
