@@ -7,14 +7,15 @@
   <body>
     <canvas></canvas>
 
-    <script src="./lib/MovingObject.js"></script>
+    <script src="./lib/utils.js"></script>
+    <script src="./lib/movingObject.js"></script>
+    <script src="./lib/asteroid.js"></script>
     <script>
      var canvasEl = document.getElementsByTagName("canvas")[0];
      canvasEl.height = window.innerHeight;
      canvasEl.width = window.innerWidth;
-     a = new Asteroids.MovingObject(
-       {pos: [200, 200], vel: [100,100], radius: 80, color: "#00FF00"}
-     )//.draw(canvasEl.getContext("2d"));
+     a = new Asteroids.Asteroid([200, 200]);
+     //.draw(canvasEl.getContext("2d"));
 
      a.draw(canvasEl.getContext("2d"));
      a.move();

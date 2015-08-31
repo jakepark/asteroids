@@ -30,5 +30,4 @@
     this.pos[1] = this.pos[1] + this.vel[1];
   }
 
-
 })();
