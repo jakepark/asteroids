@@ -7,6 +7,7 @@
     this.num_asteroids = Game.NUM_ASTEROIDS;
     this.asteroids = [];
     this.addAsteroids();
+    this.ship = new Asteroids.Ship(this);
   };
 
   Game.DIM_X = 600;
@@ -78,4 +79,9 @@
       this.asteroids.splice(indexToDelete, 1)
     };
   }
+
+  Game.prototype.allObjects = function () {
+    this.asteroids.push(this.ship);
+  }
+  
 })();
