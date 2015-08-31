@@ -53,7 +53,7 @@
     if (pos[1] < 0) {
       pos[1] = this.dim_y;
     }
-    return pos;
+    // return pos;
   }
 
   Game.prototype.checkCollisions = function() {
