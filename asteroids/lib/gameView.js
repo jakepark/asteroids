@@ -10,7 +10,7 @@
     var view = this;
     window.setInterval(function (){
       view.game.draw(view.ctx);
-      view.game.moveObjects();
+      view.game.step();
     }, 20);
   }
 
