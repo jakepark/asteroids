@@ -39,4 +39,20 @@
     });
   };
 
+  Game.prototype.wrap = function(pos) {
+    if (pos[0] > this.dim_x) {
+      pos[0] = 0;
+    }
+    if (pos[0] < 0) {
+      pos[0] = this.dim_x;
+    }
+    if (pos[1] > this.dim_y) {
+      pos[1] = 0;
+    }
+    if (pos[1] < 0) {
+      pos[1] = this.dim_y;
+    }
+    return pos;
+  }
+
 })();
