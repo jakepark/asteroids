@@ -15,7 +15,7 @@
 
   Game.prototype.addAsteroids = function () {
     for (var i = 0; i < this.num_asteroids; i++){
-      a = new Asteroids.Asteroid(this.randomPosition());
+      a = new Asteroids.Asteroid(this.randomPosition(), this);
       this.asteroids.push(a);
     };
   };
