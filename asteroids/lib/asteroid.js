@@ -11,11 +11,7 @@
 
   Util.inherits(Asteroid, Asteroids.MovingObject);
 
-  Asteroid.COLOR = "#115c4d"
-  Asteroid.RADIUS = 50
-
-
-
-
+  Asteroid.COLOR = "#115c4d";
+  Asteroid.RADIUS = 50;
 
 })();
