@@ -69,14 +69,14 @@
     };
   };
 
+  Game.prototype.isOutOfBounds = function(pos) {
+    return (pos[0] < 0 || pos[0] > this.dim_x || pos[1] < 0 || pos[1] > this.dim_y);
+  }
+  
   Game.prototype.step = function() {
     this.moveObjects();
     this.checkCollisions();
   };
-
-  // Game.prototype.addObj = function(obj) {
-  //
-  // };
 
   Game.prototype.removeObj = function(obj) {
     if (obj instanceof Asteroids.Asteroid) {

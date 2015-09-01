@@ -18,11 +18,6 @@
     if (otherObject instanceof Asteroids.Ship) {
       otherObject.relocate();
     }
-    // else if (otherObject instanceof Asteroids.Bullet) {
-    //   alert("hit!");
-    //   this.game.removeObj(otherObject);
-    //   this.game.removeObj(this);
-    // };
   };
 
 })();

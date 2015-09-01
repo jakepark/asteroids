@@ -27,4 +27,6 @@
     };
   };
 
+  Bullet.prototype.isWrappable = false;
+  
 })();

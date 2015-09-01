@@ -29,19 +29,27 @@
   MovingObject.prototype.move = function (){
     this.pos[0] = this.pos[0] + this.vel[0];
     this.pos[1] = this.pos[1] + this.vel[1];
-    this.game.wrap(this.pos);
-  }
+    if (this.game.isOutOfBounds(this.pos)) {
+      if (this.isWrappable) {
+        this.game.wrap(this.pos);
+      }
+      else {
+        this.game.removeObj(this);
+      }
+    };
+  };
 
   MovingObject.prototype.isCollidedWith = function (otherObject){
-    pos1 = this.pos
-    pos2 = otherObject.pos
+    pos1 = this.pos;
+    pos2 = otherObject.pos;
     var dist = Math.sqrt(Math.pow((pos1[0] - pos2[0]), 2) +
                 Math.pow((pos1[1] - pos2[1]), 2));
     return (dist < (this.radius + otherObject.radius));
-  }
+  };
 
   MovingObject.prototype.collideWith = function(otherObject) {
+  };
 
-  }
+  MovingObject.prototype.isWrappable = true;
 
 })();
