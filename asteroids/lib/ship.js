@@ -16,6 +16,7 @@
 
   Ship.RADIUS = 15;
   Ship.COLOR = "#FF0000";
+  Ship.bulletSpeedMultiplier = 2;
 
   Ship.prototype.relocate = function() {
     this.pos = this.game.randomPosition();
@@ -29,7 +30,8 @@
 
   Ship.prototype.fireBullet = function() {
     var bPos = [this.pos[0], this.pos[1]];
-    var bVel = [this.vel[0], this.vel[1]];
+    var bVel = [this.vel[0] * Ship.bulletSpeedMultiplier,
+                this.vel[1] * Ship.bulletSpeedMultiplier];
     var bullet = new Asteroids.Bullet(bPos, bVel, this.game);
     this.game.addBullet(bullet);
   }
