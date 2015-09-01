@@ -14,7 +14,7 @@
 
   Util.inherits(Ship, Asteroids.MovingObject);
 
-  Ship.RADIUS = 5;
+  Ship.RADIUS = 15;
   Ship.COLOR = "#FF0000";
 
   Ship.prototype.relocate = function() {
@@ -27,5 +27,9 @@
     this.vel[1] = this.vel[1] + impulse[1];
   }
 
+  Ship.prototype.fireBullet = function() {
+    bullet = new Asteroids.Bullet(this.pos, this.vel, this.game);
+    this.game.addBullet(bullet);
+  }
 
 })();
