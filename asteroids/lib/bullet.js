@@ -10,9 +10,9 @@
       radius: Bullet.RADIUS,
       color: Bullet.COLOR
     }, game);
-    // if (this.vel[0] === 0 && this.vel[1] === 0) {
-    //   this.vel = Util.randomVec(5);
-    // }
+    if (this.vel[0] === 0 && this.vel[1] === 0) {
+      this.vel = Util.randomVec(5);
+    }
   };
 
   Util.inherits(Bullet, Asteroids.MovingObject);
@@ -28,5 +28,5 @@
   };
 
   Bullet.prototype.isWrappable = false;
-  
+
 })();
