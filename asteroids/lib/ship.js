@@ -28,7 +28,9 @@
   }
 
   Ship.prototype.fireBullet = function() {
-    bullet = new Asteroids.Bullet(this.pos, this.vel, this.game);
+    var bPos = [this.pos[0], this.pos[1]];
+    var bVel = [this.vel[0], this.vel[1]];
+    var bullet = new Asteroids.Bullet(bPos, bVel, this.game);
     this.game.addBullet(bullet);
   }
 

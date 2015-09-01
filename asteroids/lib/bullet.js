@@ -10,12 +10,21 @@
       radius: Bullet.RADIUS,
       color: Bullet.COLOR
     }, game);
-    if (this.vel[0] === 0 && this.vel[1] === 0) {
-      this.vel = Util.randomVec(5);
-    }
+    // if (this.vel[0] === 0 && this.vel[1] === 0) {
+    //   this.vel = Util.randomVec(5);
+    // }
   };
 
   Util.inherits(Bullet, Asteroids.MovingObject);
   Bullet.COLOR = "#000000";
   Bullet.RADIUS = 10;
+
+  Bullet.prototype.collideWith = function(otherObject) {
+    if (otherObject instanceof Asteroids.Asteroid) {
+      // alert("hit!");
+      this.game.removeObj(otherObject);
+      this.game.removeObj(this);
+    };
+  };
+
 })();

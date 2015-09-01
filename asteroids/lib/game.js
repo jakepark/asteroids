@@ -17,8 +17,8 @@
 
   Game.prototype.addAsteroids = function () {
     for (var i = 0; i < this.num_asteroids; i++){
-      a = new Asteroids.Asteroid(this.randomPosition(), this);
-      this.asteroids.push(a);
+      ast = new Asteroids.Asteroid(this.randomPosition(), this);
+      this.asteroids.push(ast);
     };
   };
 
@@ -78,12 +78,20 @@
   //
   // };
 
-  Game.prototype.remove = function(asteroid) {
-    var indexToDelete = this.asteroids.indexOf(asteroid);
-    if (indexToDelete !== -1){
-      this.asteroids.splice(indexToDelete, 1)
+  Game.prototype.removeObj = function(obj) {
+    if (obj instanceof Asteroids.Asteroid) {
+      var indexToDelete = this.asteroids.indexOf(obj);
+      if (indexToDelete !== -1) {
+        this.asteroids.splice(indexToDelete, 1);
+      };
     };
-  }
+    if (obj instanceof Asteroids.Bullet) {
+      var indexToDelete = this.bullets.indexOf(obj);
+      if (indexToDelete !== -1) {
+        this.bullets.splice(indexToDelete, 1);
+      };
+    };
+  };
 
   Game.prototype.addBullet = function(bullet) {
     this.bullets.push(bullet);
