@@ -3,18 +3,18 @@
 
   var Util = new Asteroids.Util();
 
-  var Asteroid = Asteroids.Asteroid = function(pos, game) {
+  var Bullet = Asteroids.Bullet = function(pos, game) {
     var vel = Util.randomVec(10)
     Asteroids.MovingObject.call(this,
-      {pos: pos, vel: vel, radius: Asteroid.RADIUS, color: Asteroid.COLOR}, game)
+      {pos: pos, vel: vel, radius: Bullet.RADIUS, color: Bullet.COLOR}, game)
   }
 
-  Util.inherits(Asteroid, Asteroids.MovingObject);
+  Util.inherits(Bullet, Asteroids.MovingObject);
 
-  Asteroid.COLOR = "#7a5230";
-  Asteroid.RADIUS = 25;
+  Bullet.COLOR = "#FF0000";
+  Bullet.RADIUS = 10;
 
-  Asteroid.prototype.collideWith = function(otherObject) {
+  Bullet.prototype.collideWith = function(otherObject) {
     if (otherObject instanceof Asteroids.Ship) {
       otherObject.relocate();
     } else {

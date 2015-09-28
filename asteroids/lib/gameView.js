@@ -29,6 +29,9 @@
     key('right', function() {
       that.game.ship.power([1, 0])
     });
+    key('space', function() {
+      that.game.ship.fireBullet()
+    });
   }
 
 })();
