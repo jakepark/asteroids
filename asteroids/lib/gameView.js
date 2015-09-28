@@ -22,20 +22,38 @@
     var that = this;
     key('up', function(event) {
       event.preventDefault()
-      that.game.ship.power([0, -1])
+      that.game.ship.power(-1) // impulse
     });
     key('down', function(event) {
       event.preventDefault()
-      that.game.ship.power([0, 1])
+      that.game.ship.power(1)
     });
     key('left', function(event) {
       event.preventDefault()
-      that.game.ship.power([-1, 0])
+      that.game.ship.rotateLeft()
     });
     key('right', function(event) {
       event.preventDefault()
-      that.game.ship.power([1, 0])
+      that.game.ship.rotateRight()
     });
+
+    // key('up', function(event) {
+    //   event.preventDefault()
+    //   that.game.ship.power([0, -1]) // impulse
+    // });
+    // key('down', function(event) {
+    //   event.preventDefault()
+    //   that.game.ship.power([0, 1])
+    // });
+    // key('left', function(event) {
+    //   event.preventDefault()
+    //   that.game.ship.power([-1, 0])
+    // });
+    // key('right', function(event) {
+    //   event.preventDefault()
+    //   that.game.ship.power([1, 0])
+    // });
+
     key('space', function(event) {
       event.preventDefault()
       that.game.ship.fireBullet()
