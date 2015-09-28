@@ -11,27 +11,33 @@
     this.bindKeyHandlers();
 
     window.setInterval(function (){
-      
+
       view.game.draw(view.ctx);
       view.game.step();
     }, 20);
   }
 
   GameView.prototype.bindKeyHandlers = function() {
+
     var that = this;
-    key('up', function() {
+    key('up', function(event) {
+      event.preventDefault()
       that.game.ship.power([0, -1])
     });
-    key('down', function() {
+    key('down', function(event) {
+      event.preventDefault()
       that.game.ship.power([0, 1])
     });
-    key('left', function() {
+    key('left', function(event) {
+      event.preventDefault()
       that.game.ship.power([-1, 0])
     });
-    key('right', function() {
+    key('right', function(event) {
+      event.preventDefault()
       that.game.ship.power([1, 0])
     });
-    key('space', function() {
+    key('space', function(event) {
+      event.preventDefault()
       that.game.ship.fireBullet()
     });
   }

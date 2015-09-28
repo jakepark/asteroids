@@ -49,15 +49,14 @@
     img_ship.src = './img/subspace_ship.png';
 
     ctx.drawImage(img_background, 0, 0);
-    // ctx.drawImage(img_ship, 0, 0);
+
     this.allObjects().forEach(function(obj) {
       if (obj instanceof Asteroids.Ship){
-        // debugger
+
         ctx.drawImage(img_ship,
           0, 0, 40, 40, // source x, y, width, height
           obj.pos[0], obj.pos[1], 40, 40 // destin x, y, width, height
-          // ctx.drawImage(img_ship, obj.pos[0], obj.pos[1],
-          //   20, 20, 40, 40, 20, 20
+    
         )
       } else {
         obj.draw(ctx);

@@ -32,6 +32,7 @@
   };
 
   Ship.prototype.fireBullet = function() {
+    
     var vel_bullet = [this.vel[0]*this.bulletspeed, this.vel[1]*this.bulletspeed]
     var pos_bullet = [this.pos[0] + this.vel[0]*30,this.pos[1] + this.vel[1]*30]
 
