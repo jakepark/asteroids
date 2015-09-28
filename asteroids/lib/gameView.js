@@ -9,7 +9,9 @@
   GameView.prototype.start = function () {
     var view = this;
     this.bindKeyHandlers();
+
     window.setInterval(function (){
+      
       view.game.draw(view.ctx);
       view.game.step();
     }, 20);
