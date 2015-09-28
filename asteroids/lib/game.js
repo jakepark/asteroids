@@ -2,6 +2,7 @@
   window.Asteroids = window.Asteroids || {};
 
   var Game = Asteroids.Game = function () {
+
     this.dim_x = Game.DIM_X;
     this.dim_y = Game.DIM_Y;
     this.num_asteroids = Game.NUM_ASTEROIDS;
@@ -11,6 +12,7 @@
 
 
     this.ship = new Asteroids.Ship(this);
+
   };
 
   Game.DIM_X = 400;
@@ -42,10 +44,24 @@
 
   Game.prototype.draw = function (ctx) {
     ctx.clearRect(0, 0, this.dim_x, this.dim_y);
-    
-    ctx.drawImage(img, 0, 0);
+
+    var img_ship = new Image();
+    img_ship.src = './img/subspace_ship.png';
+
+    ctx.drawImage(img_background, 0, 0);
+    // ctx.drawImage(img_ship, 0, 0);
     this.allObjects().forEach(function(obj) {
-      obj.draw(ctx);
+      if (obj instanceof Asteroids.Ship){
+        // debugger
+        ctx.drawImage(img_ship,
+          0, 0, 40, 40, // source x, y, width, height
+          obj.pos[0], obj.pos[1], 40, 40 // destin x, y, width, height
+          // ctx.drawImage(img_ship, obj.pos[0], obj.pos[1],
+          //   20, 20, 40, 40, 20, 20
+        )
+      } else {
+        obj.draw(ctx);
+      }
     });
   };
 

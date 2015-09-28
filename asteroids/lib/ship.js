@@ -3,14 +3,17 @@
 
   var Util = new Asteroids.Util();
 
-
   var Ship = Asteroids.Ship = function (game){
     this.game = game;
     this.pos = this.game.randomPosition();
     this.vel = [0,0];
     this.radius = Ship.RADIUS;
     this.color = Ship.COLOR;
-    this.bulletspeed = Ship.BULLETSPEED
+    this.bulletspeed = Ship.BULLETSPEED;
+    // this.sprite = new Asteroids.Sprite(url, pos, size);
+    this.sprite = new Asteroids.Sprite(
+        'img/subspace_ship.png', [20, 20], [40, 40]
+      );
   };
 
   Util.inherits(Ship, Asteroids.MovingObject);
@@ -31,12 +34,14 @@
   Ship.prototype.fireBullet = function() {
     var vel_bullet = [this.vel[0]*this.bulletspeed, this.vel[1]*this.bulletspeed]
     var pos_bullet = [this.pos[0] + this.vel[0]*30,this.pos[1] + this.vel[1]*30]
-    
+
     b = new Asteroids.Bullet(pos_bullet, vel_bullet, this.game);
 
     this.game.add(b);
 
   };
 
-
 })();
+
+
+//ship sprites: 20, 20 start, 40 in between each..
