@@ -12,15 +12,18 @@
     this.bulletspeed = Ship.BULLETSPEED;
 
     this.heading = 0;
-    // this.sprite = new Asteroids.Sprite(url, pos, size);
-    this.sprite = new Asteroids.Sprite(
-        'img/subspace_ship.png', [20, 20], [40, 40]
+
+    // (url, pos, size, speed, frames, dir, once)
+
+    this.sprite = new Asteroids.Sprite(   // url, pos, size
+        'img/ship.png', [20, 20], [40, 40],
+        0, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
       );
   };
 
   Util.inherits(Ship, Asteroids.MovingObject);
 
-  Ship.RADIUS = 15;
+  Ship.RADIUS = 10;
   Ship.COLOR = "#007bb5";
   Ship.BULLETSPEED = 2;
 
@@ -60,6 +63,15 @@
   Ship.prototype.rotateRight = function () {
     this.heading -= Math.PI/20;
   };
+
+  // Ship.prototype.render = function () {
+  //
+  //   ctx.drawImage(img_ship,
+  //     0, 0, 40, 40, // source x, y, width, height
+  //     obj.pos[0], obj.pos[1], 40, 40 // destin x, y, width, height
+  //   )
+  // };
+
 
 })();
 

@@ -1,6 +1,8 @@
 (function() {
   window.Asteroids = window.Asteroids || {};
 
+  // only required:  url, pos, size 
+
   var Sprite = Asteroids.Sprite = function (url, pos, size, speed, frames, dir, once) {
       this.pos = pos;
       this.size = size;
