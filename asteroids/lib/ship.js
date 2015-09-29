@@ -10,6 +10,7 @@
     this.radius = Ship.RADIUS;
     this.color = Ship.COLOR;
     this.bulletspeed = Ship.BULLETSPEED;
+    this.speedlimit = Ship.SPEEDLIMIT;
 
     this.heading = 0;
 
@@ -26,14 +27,30 @@
   Ship.RADIUS = 10;
   Ship.COLOR = "#007bb5";
   Ship.BULLETSPEED = 2;
+  Ship.SPEEDLIMIT = 5;
 
   Ship.prototype.relocate = function() {
     this.pos = this.game.randomPosition();
   };
 
   Ship.prototype.power = function(impulse) {
-    this.vel[0] = this.vel[0] + impulse*Math.sin(this.heading);
-    this.vel[1] = this.vel[1] + impulse*Math.cos(this.heading);
+    var x = this.vel[0]
+    var y = this.vel[1]
+    // var magnitude = Math.pow((Math.pow(x, 2) + Math.pow(y, 2)), 0.5)
+
+    var x_new = x + impulse*Math.sin(this.heading);
+    var y_new = y + impulse*Math.cos(this.heading);
+
+    // this is weird physics..
+    if (Math.abs(x_new) < this.speedlimit){
+      x = x_new
+    }
+    if (Math.abs(y_new) < this.speedlimit){
+      y = y_new
+    }
+
+    this.vel[0] = x;
+    this.vel[1] = y;
 
   };
 
@@ -43,6 +60,14 @@
   // };
 
   Ship.prototype.fireBullet = function() {
+    var x = this.pos[0]
+    var y = this.pos[1]
+    var magnitude = Math.pow((Math.pow(x, 2) + Math.pow(y, 2)), 0.5)
+    debugger
+    var univ_v = [0, 0]
+
+    x_traj = Math.sin(this.heading)
+    y_traj = Math.cos(this.heading);
 
     var vel_bullet = [this.vel[0]*this.bulletspeed, this.vel[1]*this.bulletspeed]
     var pos_bullet = [this.pos[0] + this.vel[0]*30,this.pos[1] + this.vel[1]*30]
