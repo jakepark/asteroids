@@ -57,19 +57,12 @@
         // ctx.rotate(obj.heading)
         ctx.save();
         ctx.translate(obj.pos[0], obj.pos[1]);
-
         ctx.rotate(-obj.heading);
-
-        ctx.drawImage(img_ship,
-            -20, -20) 
-
-
+        ctx.drawImage(img_ship, -20, -20)
         ctx.restore();
         // ctx.rotate(-obj.heading)
         // ctx.translate(-obj.pos[0], -obj.pos[1])
 
-
-        //
         // ctx.drawImage(img_ship,
         //   0, 0, 40, 40, // source x, y, width, height
         //   obj.pos[0], obj.pos[1], 40, 40) // destin x, y, width, height

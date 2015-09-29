@@ -62,16 +62,26 @@
   Ship.prototype.fireBullet = function() {
     var x = this.pos[0]
     var y = this.pos[1]
+    var x_vel = this.vel[0]
+    var y_vel = this.vel[1]  // velocity is flipped due to canvas draw direction
+
+
+
+    // var nose = this.RADIUS + Asteroids.Bullet.RADIUS
+    var nose = 15
+
     var magnitude = Math.pow((Math.pow(x, 2) + Math.pow(y, 2)), 0.5)
-    debugger
-    var univ_v = [0, 0]
 
-    x_traj = Math.sin(this.heading)
-    y_traj = Math.cos(this.heading);
 
-    var vel_bullet = [this.vel[0]*this.bulletspeed, this.vel[1]*this.bulletspeed]
-    var pos_bullet = [this.pos[0] + this.vel[0]*30,this.pos[1] + this.vel[1]*30]
+    x_offset = Math.sin(this.heading)
+    y_offset = Math.cos(this.heading);
 
+    var vel_bullet = [x_vel - this.bulletspeed * x_offset,
+          y_vel - this.bulletspeed * y_offset]
+          
+    var pos_bullet = [x + (-nose) * x_offset, y + (-nose) * y_offset]
+    // debugger
+    // var pos_bullet = [x + x_vel*30, y + y_vel*30]
     b = new Asteroids.Bullet(pos_bullet, vel_bullet, this.game);
 
     this.game.add(b);
