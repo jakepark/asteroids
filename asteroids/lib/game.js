@@ -47,25 +47,26 @@
 
     var img_ship = new Image();
     img_ship.src = './img/ship.png';
+    var img_asteroid = new Image();
+    img_asteroid.src = './img/asteroid.png';
+    var img_bullet = new Image();
+    img_bullet.src = './img/bullet.png';
 
     ctx.drawImage(img_background, 0, 0);
 
     this.allObjects().forEach(function(obj) {
       if (obj instanceof Asteroids.Ship){
 
-        // ctx.translate(obj.pos[0], obj.pos[1])
-        // ctx.rotate(obj.heading)
         ctx.save();
         ctx.translate(obj.pos[0], obj.pos[1]);
         ctx.rotate(-obj.heading);
         ctx.drawImage(img_ship, -20, -20)
         ctx.restore();
-        // ctx.rotate(-obj.heading)
-        // ctx.translate(-obj.pos[0], -obj.pos[1])
 
-        // ctx.drawImage(img_ship,
-        //   0, 0, 40, 40, // source x, y, width, height
-        //   obj.pos[0], obj.pos[1], 40, 40) // destin x, y, width, height
+      } else if (obj instanceof Asteroids.Asteroid){
+        ctx.drawImage(img_asteroid, obj.pos[0]-25, obj.pos[1]-25)
+      } else if (obj instanceof Asteroids.Bullet){
+        ctx.drawImage(img_bullet, obj.pos[0]-5, obj.pos[1]-5)
 
       } else {
         obj.draw(ctx);
@@ -138,3 +139,35 @@
   }
 
 })();
+
+
+
+
+  // Game.prototype.draw = function (ctx) {
+  //   ctx.clearRect(0, 0, this.dim_x, this.dim_y);
+  //
+  //   var img_ship = new Image();
+  //   img_ship.src = './img/ship.png';
+  //
+  //   ctx.drawImage(img_background, 0, 0);
+  //
+  //   this.allObjects().forEach(function(obj) {
+  //     if (obj instanceof Asteroids.Ship){
+  //
+  //       // ctx.translate(obj.pos[0], obj.pos[1])
+  //       // ctx.rotate(obj.heading)
+  //       ctx.save();
+  //       ctx.translate(obj.pos[0], obj.pos[1]);
+  //       ctx.rotate(-obj.heading);
+  //       ctx.drawImage(img_ship, -20, -20)
+  //       ctx.restore();
+  //
+  //       // ctx.drawImage(img_ship,
+  //       //   0, 0, 40, 40, // source x, y, width, height
+  //       //   obj.pos[0], obj.pos[1], 40, 40) // destin x, y, width, height
+  //
+  //     } else {
+  //       obj.draw(ctx);
+  //     }
+  //   });
+  // };
