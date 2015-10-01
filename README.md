@@ -1,11 +1,11 @@
 # Asteroids!
 
 Use the arrow keys to control the ship.
-<up> to increase thrust,
-<down> to decrease thrust,
-<left> to turn the ship's heading left,
-<right> to turn the ship's heading right.
-<spacebar> to fire main canon!!
+UP to increase thrust,
+DOWN to decrease thrust,
+LEFT to turn the ship's heading left,
+RIGHT to turn the ship's heading right.
+SPACEBAR to fire main canon!!
 
 You'll have to increase thrust when the ship's heading is turned in order for
 your craft to move in the direction it's pointing.
