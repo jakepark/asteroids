@@ -8,7 +8,7 @@
 
   </head>
   <body>
-    <canvas id="game-canvas" width="400" height="400"></canvas>
+    <canvas id="game-canvas" width="800" height="400"></canvas>
 
     <script src="./lib/keymaster.js"></script>
     <script src="./lib/utils.js"></script>
@@ -33,7 +33,7 @@
       img_background.onload = function () {
         ctx.drawImage(img_background, 0, 0);
       };
-      img_background.src = './img/andromeda.jpg'
+      img_background.src = './img/space_blue.jpg'
 
       var gameView = new Asteroids.GameView(game, ctx);
       gameView.start();
@@ -43,19 +43,24 @@
   <script>
   function overlay() {
     el = document.getElementById('overlay');
-    el.style.visibility = (el.style.visibility == 'visible') ? 'hidden' : 'visible';
+    el.style.visibility = 'hidden';
+    this.game.ship.clipping = true
+
+    // el.style.visibility = (el.style.visibility == 'visible') ? 'hidden' : 'visible';
+
   }
-  window.onload = overlay;
+  // window.onload = overlay;
   </script>
 
 
-   <div id='overlay'   visibility='visible'>
+   <div id='overlay'>
     <div>
       <p> Welcome to Asteroids. Shoot em up using spacebar!
         Turn your ship using arrow keys. Up increases thrust, down decreases
         thrust.
       </p>
-      Click here to [<a href='#' onclick='overlay()'>continue</a>]
+      Your ship will become vulnerable once you <br>
+      [<a href='#' onclick='overlay()'>Start Game</a>]
     </div>
 
    </div>
