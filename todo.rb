@@ -1,5 +1,5 @@
 1. Set timer for ship respawn  DONE
-2. Respawn enemies
+2. Respawn enemies DONE
 3. Asteroid Collisions
 4. Ship velocity
 5. input multiple keys
