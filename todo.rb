@@ -1,4 +1,4 @@
-1. Set timer for ship respawn
+1. Set timer for ship respawn  DONE
 2. Respawn enemies
 3. Asteroid Collisions
 4. Ship velocity
