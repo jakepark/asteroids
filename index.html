@@ -44,12 +44,15 @@
   function overlay() {
     el = document.getElementById('overlay');
     el.style.visibility = 'hidden';
-    this.game.ship.clipping = true
+    this.game.ship.safe = true
 
+    window.setTimeout(function () {
+      this.game.ship.safe = false
+    }.bind(this), 5000);
     // el.style.visibility = (el.style.visibility == 'visible') ? 'hidden' : 'visible';
-
   }
   // window.onload = overlay;
+
   </script>
 
 
