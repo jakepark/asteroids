@@ -2,7 +2,7 @@
 2. A : Respawn enemies DONE
 2. B : Asteroids spawn with radii DONE
 2. C : Sprites scale to the hitboxes DONE
-3. Asteroid Collisions
+3. Asteroid Collisions DONE!!
 
   V = (4/3) pi r^3
   d = m / V .... assume d = 1 kg / m^3;
