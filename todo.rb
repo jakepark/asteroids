@@ -1,6 +1,6 @@
 1. Set timer for ship respawn  DONE
 2. A : Respawn enemies DONE
-2. B : Asteroids spawn RANDOM RADII DONE
+2. B : Asteroids spawn with radii DONE
 2. C : Sprites scale to the hitboxes DONE
 3. Asteroid Collisions
 
