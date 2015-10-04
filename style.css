@@ -1,3 +1,8 @@
+div {
+
+  display: inherit;
+}
+
 #overlay {
   visibility: visible;
   float: left;
@@ -68,4 +73,32 @@ body {
   background: black;
   width: 800px;
   margin: 0px auto 0 auto;
+}
+
+.display {
+  position: absolute;
+  top: 100px;
+
+  color: white;
+  font-size: 24px;
+}
+
+.shield {
+  position: absolute;
+  left: 25px;
+  width: 125px;
+
+}
+.shield-status {
+  float: right;
+
+}
+
+.lives {
+  position: absolute;
+  left: 675px;
+  width: 100px;
+}
+.lives-count {
+  float: right;
 }
