@@ -1,4 +1,14 @@
-div {
+html, div {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  color: inherit;
 
   display: inherit;
 }
@@ -83,8 +93,9 @@ body {
   font-size: 24px;
 }
 
-.shield {
+.shields {
   position: absolute;
+  top: 0px;
   left: 25px;
   width: 125px;
 
@@ -96,6 +107,7 @@ body {
 
 .lives {
   position: absolute;
+  top: 0px;
   left: 675px;
   width: 100px;
 }

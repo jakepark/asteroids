@@ -11,5 +11,5 @@
   m1v1 + m2v2 = m1*v1* + m2*v2*
 4. Ship velocity   DONE (good enough)
 5. input multiple keys
-6. Display overlay of ship statistics
-7. shields
+6. Display overlay of ship statistics   DONE (good enough)
+7. shields DONE (bullets are the only enemy..)
