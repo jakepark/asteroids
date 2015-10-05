@@ -85,6 +85,9 @@ body {
   margin: 0px auto 0 auto;
 }
 
+
+/*Status Display Overlay*/
+/*div display container*/
 .display {
   position: absolute;
   top: 100px;
@@ -93,9 +96,10 @@ body {
   font-size: 24px;
 }
 
+/*left*/
 .shields {
   position: absolute;
-  top: 0px;
+  top: -75px;
   left: 25px;
   width: 125px;
 
@@ -105,12 +109,15 @@ body {
 
 }
 
+/*right*/
 .lives {
   position: absolute;
-  top: 0px;
+  top: -75px;
   left: 675px;
   width: 100px;
 }
 .lives-count {
   float: right;
 }
+
+/*End Status Display*/
