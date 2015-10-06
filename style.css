@@ -109,25 +109,50 @@ body {
 
 }
 
-/*right*/
 .lives {
   position: absolute;
   top: -50px;
-  left: 650px;
+  left: 25px;
   width: 120px;
 }
 .lives-count {
   float: right;
 }
 
+/*center*/
+
 
 .rounds {
   position: absolute;
-  top: -75px;
-  left: 650px;
+  top: -40px;
+  left: 350px;
   width: 120px;
 }
 .rounds-count {
   float: right;
 }
+
+/*right*/
+.shields_p2 {
+  position: absolute;
+  top: -75px;
+  left: 550px;
+  width: 125px;
+
+}
+.shield-status_p2 {
+  float: right;
+
+}
+
+.lives_p2 {
+  position: absolute;
+  top: -50px;
+  left: 550px;
+  width: 120px;
+}
+.lives-count_p2 {
+  float: right;
+}
+
 /*End Status Display*/
