@@ -8,8 +8,8 @@
 
   </head>
   <body>
-    <h1>Asteroids!!</h1>
-
+    <h1>Asteroids!</h1>
+    <a class="logo" href="parkjake.com">Jake Park</a>
     <div class="display"></div>
 
     <canvas id="game-canvas" width="800" height="400"></canvas>
@@ -52,9 +52,11 @@
     el.style.visibility = 'hidden';
     this.game.ship.safe = true
     this.game.nemesis.safe = true
+    this.game.safety = true
     window.setTimeout(function () {
       this.game.ship.safe = false
-      this.game.nemesis.safe = false  
+      this.game.nemesis.safe = false
+      this.game.safety = false
     }.bind(this), 3000);
     // el.style.visibility = (el.style.visibility == 'visible') ? 'hidden' : 'visible';
   }
@@ -69,10 +71,18 @@
         Turn your ship using arrow keys. Up increases thrust, down decreases
         thrust.
       Your ship will become vulnerable once you <br>
-      [<a href='#' onclick='overlay()'>Start Game</a>]
+      <a href='#' class="launch" onclick='overlay()'>Launch Game</a>
       </p>
     </div>
+   </div>
 
+   <div id='page1'>
+    <div>
+      <p> Page one..
+
+      <a href='#' onclick='overlay()'>Continue</a>
+      </p>
+    </div>
    </div>
 
   </body>

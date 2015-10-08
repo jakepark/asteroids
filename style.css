@@ -1,17 +1,17 @@
-html, div {
-  border: none;
-  outline: none;
-  padding: 0;
+html, div, a {
   margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
   font: inherit;
   box-sizing: inherit;
   text-align: inherit;
   text-decoration: inherit;
   vertical-align: inherit;
   color: inherit;
-
-  display: inherit;
+  background: transparent;
 }
+
 
 #overlay {
   visibility: visible;
@@ -52,26 +52,16 @@ html, div {
   border: 1px solid red;
 }
 
+.launch{
+  background-color: yellow;
+  color: black;
+  border: 1px solid white:
+}
+
 #game-canvas{
   margin: 0 auto;
 }
 
-#content {
-    border-radius:8px;
-    background:#fff;
-    padding:20px;
-}
-
-#close {
-    position:absolute;
-    /*background:url(close.png) 0 0 no-repeat;*/
-    width:24px;
-    height:27px;
-    display:block;
-    text-indent:-9999px;
-    top:-7px;
-    right:-7px;
-}
 
 h1 {
   color: white;
@@ -85,6 +75,14 @@ body {
   margin: 0px auto 0 auto;
 }
 
+.logo {
+  margin: 0 auto;
+  border: 1px solid red;
+  color: white;
+  display: block;
+  width: 100px;
+  text-align: center;
+}
 
 /*Status Display Overlay*/
 /*div display container*/
