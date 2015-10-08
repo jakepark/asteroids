@@ -14,7 +14,7 @@ Remember: in space, an object in motion stays in motion, until acted upon
 by an external force!
 
 The asteroids bump into each other. Blow them up outta your way!
-Your bullets are incendiary. They should make any object in its path explode!!
+Your bullets are incendiary. They will make any object in its path explode. (eventually)
 You're going to need to double tap on some of the bigger asteroids..
 
 Also, this quadrant of space-time has the topology of a toroidal surface,
@@ -25,13 +25,15 @@ this plane of existence.
 
 TECHNICAL FEATURES:
 
-The ship spawns with a 5 second grace period.
-The asteroid radii are randomly generated.
-The asteroids are spawned and generated to ensure no start position
+- [x] The enemy (red) ship AI targets and rotates towards the player's location. And then fires lots of bullets.
+- [x] The players spawn with a 5 second grace period.
+- [x] The players starts with shields at full capacity.
+- [x] When shields are up, ships are impervious to collisions with asteroids or craft.
+- [x] When shields are down, ships will blow up upon any collision.
+- [x] The asteroids are spawned and generated to ensure no start position
 have overlapping asteroids.
-The asteroids have mass, proportional to its volume. Assuming a density of 1.
-The asteroids collide off each other in assuming a perfectly elastic collision,
-conservating momentum.
-The asteroids waves respawn after a 5 seconds of destruction of all enemies.
-Bullets can be destroyed by other bullets.
-Explosion sprites retain the same trajectory as the object prior to destruction.
+- [x] The asteroids have mass, proportional to its randomly generated radius.
+- [x] The asteroids collide off each other in assuming a perfectly elastic collision, conservating momentum.
+- [x] The asteroids waves respawn  5 seconds after the destruction of all enemies.
+- [x] Bullets can be destroyed by other bullets.
+- [x] Explosion sprites retain the same trajectory as the object prior to destruction.
