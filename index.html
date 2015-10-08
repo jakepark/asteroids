@@ -47,6 +47,21 @@
    </script>
 
   <script>
+  function page1() {
+    el = document.getElementById('page1');
+    el.style.visibility = 'hidden';
+    el = document.getElementById('page2');
+    el.style.visibility = 'visible';
+  }
+
+  function page2() {
+    el = document.getElementById('page2');
+    el.style.visibility = 'hidden';
+    el = document.getElementById('overlay');
+    el.style.visibility = 'visible';
+  }
+
+
   function overlay() {
     el = document.getElementById('overlay');
     el.style.visibility = 'hidden';
@@ -65,25 +80,62 @@
   </script>
 
 
+
+
+   <div id='page1'>
+    <div>
+      <p> Welcome to Asteroids!<br>
+
+        An object in motion stays in motion with the same speed and direction,
+        unless acted upon by an external force..<br>
+
+      <a href='#' class="next" onclick='page1()'>Continue</a>
+      </p>
+    </div>
+   </div>
+
+   <div id='page2'>
+    <div>
+      <p class="left"> Player 1:<br>
+        ^ Forward Thrusters!<br>
+        d Reverse Thrusters!<br>
+        < Turn Left<br>
+        > Turn Right<br>
+        spacebar Fire Bullet<br>
+        left ctrl EMERGENCY STOP<br>
+      </p>
+      <p class="right"> Player 2:<br>
+        W Forward Thrusters!<br>
+        S Reverse Thrusters!<br>
+        A Turn Left<br>
+        D Turn Right<br>
+        F Fire Bullet<br>
+        Q EMERGENCY STOP<br>
+      </p>
+
+      <a href='#' class="next" onclick='page2()'>Continue</a>
+      </p>
+    </div>
+   </div>
+
    <div id='overlay'>
     <div>
-      <p> Welcome to Asteroids. Shoot em up using spacebar!
-        Turn your ship using arrow keys. Up increases thrust, down decreases
-        thrust.
+      <p>Asteroids are your friends.. until your shields are depleted..<br>
+        Use them for cover, or just watch the physics unfold!<br>
+
+      Player 2's AI will rotate to track you and destroy you!<br>
+
+      You are given a grace period of 3 seconds every time an asteroid wave respawns.<br>
+      Your shields can take 3 hits; after that, be careful! The slightest space debris<br>
+      will destroy your craft.<br>
+
+
       Your ship will become vulnerable once you <br>
       <a href='#' class="launch" onclick='overlay()'>Launch Game</a>
       </p>
     </div>
    </div>
 
-   <div id='page1'>
-    <div>
-      <p> Page one..
-
-      <a href='#' onclick='overlay()'>Continue</a>
-      </p>
-    </div>
-   </div>
 
   </body>
 </html>
