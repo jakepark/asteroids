@@ -11,10 +11,10 @@ You'll have to increase thrust when the ship's heading is turned in order for
 your craft to move in the direction it's pointing.
 
 Remember: in space, an object in motion stays in motion, until acted upon
-by an external force.
+by an external force!
 
-The asteroids bump into each other. Your bullets are incendiary.
-They will make any object in its path explode. (eventually)
+The asteroids bump into each other. Blow them up outta your way!
+Your bullets are incendiary. They will make any object in its path explode. (eventually)
 You're going to need to double tap on some of the bigger asteroids..
 
 Also, this quadrant of space-time has the topology of a toroidal surface,
@@ -37,3 +37,8 @@ have overlapping asteroids.
 - [x] The asteroids waves respawn  5 seconds after the destruction of all enemies.
 - [x] Bullets can be destroyed by other bullets.
 - [x] Explosion sprites retain the same trajectory as the object prior to destruction.
+
+CREDIT:
+
+Spaceship design from 'Subspace', image released by author under Creative Commons, fair use for this educational project.
+  
