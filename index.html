@@ -28,22 +28,33 @@
     <script src="./lib/gameView.js"></script>
 
     <script>
-      var canvasEl = document.getElementById("game-canvas");
 
-      var game = new Asteroids.Game();
-      var ctx = canvasEl.getContext("2d");
+      function gameViewStart(){
+        canvasEl = document.getElementById("game-canvas");
+
+        game = new Asteroids.Game();
+        ctx = canvasEl.getContext("2d");
+
+        game.gamedone = false
+        game.ship.safe = true
+        game.nemesis.safe = true
+        game.safety = true
+        window.setTimeout(function () {
+          game.ship.safe = false
+          game.nemesis.safe = false
+          game.safety = false
+        }, 3000);
 
 
+        var img_background = new Image();
+        img_background.src = './img/space_blue.jpg'
+        img_background.onload = function () {
+          ctx.drawImage(img_background, 0, 0);
+        };
 
-      var img_background = new Image();
-      img_background.onload = function () {
-        ctx.drawImage(img_background, 0, 0);
-      };
-      img_background.src = './img/space_blue.jpg'
-
-      var gameView = new Asteroids.GameView(game, ctx);
-      gameView.start();
-
+        gameView = new Asteroids.GameView(game, ctx);
+        gameView.start();
+      }
    </script>
 
   <script>
@@ -65,17 +76,24 @@
   function overlay() {
     el = document.getElementById('overlay');
     el.style.visibility = 'hidden';
-    this.game.ship.safe = true
-    this.game.nemesis.safe = true
-    this.game.safety = true
-    window.setTimeout(function () {
-      this.game.ship.safe = false
-      this.game.nemesis.safe = false
-      this.game.safety = false
-    }.bind(this), 3000);
+    gamestart();
     // el.style.visibility = (el.style.visibility == 'visible') ? 'hidden' : 'visible';
   }
   // window.onload = overlay;
+
+  function gamestart(){
+    gameViewStart();
+
+  }
+
+  function restart(){
+    var el = document.getElementById('gameOver');
+    el.style.visibility = 'hidden';
+    delete game;
+    delete gameView;
+
+    gameViewStart();
+  }
 
   </script>
 
@@ -104,14 +122,14 @@
         <i class="kbd">spacebar</i> Fire Bullet<br>
         <i class="kbd">left ctrl</i> EMERGENCY STOP<br>
       </p>
-      <p class="right"> Player 2:<br>
+      <!-- <p class="right"> Player 2:<br>
         <i class="kbd">W</i> Forward Thrusters!<br>
         <i class="kbd">S</i> Reverse Thrusters!<br>
         <i class="kbd">A</i> Turn Left<br>
         <i class="kbd">D</i> Turn Right<br>
         <i class="kbd">F</i> Fire Bullet<br>
         <i class="kbd">Q</i> EMERGENCY STOP<br>
-      </p>
+      </p> -->
 
       <a href='#' class="next" onclick='page2()'>Continue</a>
       </p>
@@ -133,6 +151,14 @@
 
       <br>Your ship will become vulnerable once you <br>
       <a href='#' class="launch" onclick='overlay()'>Launch Game</a>
+      </p>
+    </div>
+   </div>
+
+   <div id='gameOver'>
+    <div>
+      <p>Game Over!!
+      <a href='#' class="launch" onclick='restart()'>Restart Game?</a>
       </p>
     </div>
    </div>
