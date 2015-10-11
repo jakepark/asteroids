@@ -52,8 +52,22 @@ white-space:nowrap;
 
 
 .logo {
+  	font-family: 'Limelight';
   margin: 0 auto;
   /*border: 1px solid red;*/
+  color: white;
+  display: block;
+  width: 125px;
+  text-align: center;
+}
+
+.logo:hover {
+  text-decoration: underline;
+}
+
+.home {
+  margin: 0 auto;
+  background-color: #0077b5;
   color: white;
   display: block;
   width: 100px;
@@ -136,8 +150,8 @@ white-space:nowrap;
 }
 
 #page2 .left {
-  float: left;
-  margin: 200px 0 0 200px;
+  /*float: left;*/
+  margin: 200px auto 20px auto;
   border: 1px solid red;
 }
 #page2 .right {
@@ -148,9 +162,9 @@ white-space:nowrap;
 }
 
 #page2 .next{
-  position: absolute;
+  /*position: absolute;
   top: 250px;
-  left: 450px;
+  left: 450px;*/
   background-color: yellow;
   color: black;
   border: 1px solid white;
