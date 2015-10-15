@@ -100,6 +100,16 @@
   function restart(){
     var el = document.getElementById('gameOver');
     el.style.visibility = 'hidden';
+    var el = document.getElementById('ending');
+    el.style.visibility = 'hidden';
+    var el = document.getElementById('winner-player');
+    el.style.visibility = 'hidden';
+    var el = document.getElementById('winner-nemesis');
+    el.style.visibility = 'hidden';
+    
+    $(".player_stats").empty()
+
+
     delete game;
     delete gameView;
 
@@ -176,20 +186,13 @@
 
       <a href='#' class="launch" onclick='restart()'>Restart Game?</a>
       </p>
+
+      <div class="player_stats">
+
+      </div>
     </div>
    </div>
-<!--
-   <div id='gameWinner'>
-    <div class="ending">
-      <p>A winner is you!!!
 
-      <br>Check out my other projects? <a class="home" href="http://www.parkjake.com">Home</a>
-        <br>
-
-      <a href='#' class="launch" onclick='restart()'>Restart Game?</a>
-      </p>
-    </div>
-   </div> -->
 
 
   </body>
