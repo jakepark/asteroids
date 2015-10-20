@@ -37,86 +37,7 @@
     <script src="./lib/nemesis.js"></script>
     <script src="./lib/game.js"></script>
     <script src="./lib/gameView.js"></script>
-
-    <script>
-
-      function gameViewStart(){
-        canvasEl = document.getElementById("game-canvas");
-
-        game = new Asteroids.Game();
-        ctx = canvasEl.getContext("2d");
-
-        game.gamedone = false
-        game.ship.safe = true
-        game.nemesis.safe = true
-        game.safety = true
-        window.setTimeout(function () {
-          game.ship.safe = false
-          game.nemesis.safe = false
-          game.safety = false
-        }, 3000);
-
-
-        var img_background = new Image();
-        img_background.src = './img/space_blue.jpg'
-        img_background.onload = function () {
-          ctx.drawImage(img_background, 0, 0);
-        };
-
-        gameView = new Asteroids.GameView(game, ctx);
-        gameView.start();
-      }
-   </script>
-
-  <script>
-  function page1() {
-    el = document.getElementById('page1');
-    el.style.visibility = 'hidden';
-    el = document.getElementById('page2');
-    el.style.visibility = 'visible';
-  }
-
-  function page2() {
-    el = document.getElementById('page2');
-    el.style.visibility = 'hidden';
-    el = document.getElementById('overlay');
-    el.style.visibility = 'visible';
-  }
-
-
-  function overlay() {
-    el = document.getElementById('overlay');
-    el.style.visibility = 'hidden';
-    gamestart();
-    // el.style.visibility = (el.style.visibility == 'visible') ? 'hidden' : 'visible';
-  }
-  // window.onload = overlay;
-
-  function gamestart(){
-    gameViewStart();
-
-  }
-
-  function restart(){
-    var el = document.getElementById('gameOver');
-    el.style.visibility = 'hidden';
-    var el = document.getElementById('ending');
-    el.style.visibility = 'hidden';
-    var el = document.getElementById('winner-player');
-    el.style.visibility = 'hidden';
-    var el = document.getElementById('winner-nemesis');
-    el.style.visibility = 'hidden';
-    
-    $(".player_stats").empty()
-
-
-    delete game;
-    delete gameView;
-
-    gameViewStart();
-  }
-
-  </script>
+    <script src="./lib/gameStart.js"></script>
 
 
 
@@ -157,7 +78,7 @@
     </div>
    </div>
 
-   <div id='overlay'>
+   <div id='startGame'>
     <div>
       <p>Asteroids are your friends.. until your shields are depleted..
         Use them for cover, or just watch the physics unfold!
@@ -171,7 +92,7 @@
 
 
       <br>Your ship will become vulnerable once you <br>
-      <a href='#' class="launch" onclick='overlay()'>Launch Game</a>
+      <a href='#' class="launch" onclick='launchGame()'>Launch Game</a>
       </p>
     </div>
    </div>
