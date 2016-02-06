@@ -125,15 +125,12 @@ white-space:nowrap;
   background-color: black;
 }
 
-#page2 div {
+#page2 .overlay {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
   height: 100%;
-  /*width: 800px;
-  height: 500px;*/
-  /*opacity: 0.6;*/
   z-index: 1000;
   background-color: black;
   color: white;
@@ -143,6 +140,11 @@ white-space:nowrap;
   /*border: 1px solid white;*/
 }
 
+#page .keymap{
+  width: 500px;
+  margin: 0 auto;
+}
+
 #page2 p {
   width: 200px;
   opacity: 1.0;
@@ -150,15 +152,12 @@ white-space:nowrap;
 }
 
 #page2 .left {
-  /*float: left;*/
-  margin: 200px auto 20px auto;
   border: 1px solid red;
+  float: left;
 }
 #page2 .right {
-  float: right;
-
-  margin: 100px 100px 0 100px;
   border: 1px solid red;
+  float: left;
 }
 
 #page2 .next{
@@ -168,6 +167,7 @@ white-space:nowrap;
   background-color: yellow;
   color: black;
   border: 1px solid white;
+  z-index: 1001;
 }
 
 #page3 {
